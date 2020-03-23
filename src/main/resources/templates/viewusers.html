@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="stylesheet" type="text/css" th:href="@{/css/login.css}" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Bootstrap core CSS -->
+<link href="../static/css/bootstrap.css" rel="stylesheet"
+	th:href="@{/css/bootstrap.css}" />
+</head>
+<body>
+	<header th:replace="fragments/header::header"></header>
+	<div class="container">
+
+		<div id="users List" align="center">
+			<!-- div tab students -->
+			<table id="t02" cellpadding="2">
+				<tr>
+					<th><a href="/enroll"><h2>SchoolTek users list</h2></a></th>
+				</tr>
+			</table>
+			<form class="form-horizontal action=" #" th:action="@{/viewusers}"
+				th:object="${user}" method="post"">
+
+				<table class="table table-striped">
+					<tr>
+						<th>IdUser</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Email</th>
+						<th>Edit</th>
+						<th>Delete</th>
+					</tr>
+
+					<tr th:each="user : ${list}">
+						<td th:text="${user.id}"></td>
+						<td th:text="${user.name}"></td>
+						<td th:text="${user.lastName}"></td>
+						<td th:text="${user.email}"></td>
+
+						<td><a th:href="@{'/edituser/' + ${user.id}}">Edit</a></td>
+						<td><a th:href="@{'/deleteuser/' + ${user.id}}">Delete</a></td>
+					</tr>
+
+				</table>
+			</form>
+		</div>
+
+	</div>
+
+</body>
+</html>

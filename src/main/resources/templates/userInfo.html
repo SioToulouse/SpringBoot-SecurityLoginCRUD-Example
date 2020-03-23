@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico"/>
+
+    <title>Spring boot first class</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+</head>
+<body>
+
+	<div class="container">
+		<div style="margin-left:300px;"> <h1>Welcome to SpringBoot learning </h1></div>
+		<!--  <div>
+			<nav class="navbar navbar-inverse">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#">Friends Only</a>
+					</div>
+					<ul class="nav navbar-nav">
+						<li><a th:href="@{/}">Home</a></li>
+						<li><a th:href="@{/login}">Page 1</a></li>
+						<li><a href="#">Page 2</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><p th:text="'Bonjour ' + ${person.email}" Style="color:red;"/></li>
+						<li><a href="#"><span class="glyphicon glyphicon-user"></span>
+								Sign Up</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
+								Login</a></li>
+					</ul>
+				</div>
+			</nav>
+
+		</div>
+		-->
+		<h1>
+			<p th:text="'User email is: ' + ${person.email} + ' password is: ' + ${person.password}" />
+		</h1>
+	</div>
+</body> <!--  div container -->
+</html>
